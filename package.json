@@ -1,11 +1,34 @@
 {
     "name": "hello_world",
     "version": "1.0.0",
-    "description": "Hello world in Node.js",
-    "main": "index.js",
+    "description": "Security-hardened HTTPS application with comprehensive security middleware including helmet, rate limiting, CORS, and input validation",
+    "main": "server.js",
+    "engines": {
+        "node": ">=14.0.0"
+    },
     "scripts": {
+        "start": "node server.js",
+        "generate-cert": "openssl req -x509 -newkey rsa:2048 -keyout server.key -out server.cert -days 365 -nodes -subj '/CN=localhost'",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
+    "dependencies": {
+        "express": "^4.21.2",
+        "helmet": "^8.0.0",
+        "express-rate-limit": "^7.5.0",
+        "cors": "^2.8.5",
+        "express-validator": "^7.2.1"
+    },
+    "keywords": [
+        "https",
+        "security",
+        "express",
+        "helmet",
+        "rate-limiting",
+        "cors",
+        "validation",
+        "tls",
+        "ssl"
+    ],
     "author": "hxu",
     "license": "MIT"
 }
